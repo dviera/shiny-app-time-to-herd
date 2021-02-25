@@ -3,7 +3,7 @@ library(lubridate)
 
 get_data <- function(){
   
-  pob <- read.csv("data/poblacion.csv")
+  pob <- read.csv("poblacion.csv")
   total_pob <- sum(pob$Poblacion)
   url <- "https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto76/vacunacion_std.csv"
   data <- read.csv(url, header = TRUE, encoding = "UTF-8")
