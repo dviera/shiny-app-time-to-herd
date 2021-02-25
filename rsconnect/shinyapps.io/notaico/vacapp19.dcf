@@ -1,0 +1,13 @@
+name: vacapp19
+title: vacapp19
+username:
+account: notaico
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3697981
+bundleId: 4271620
+url: https://notaico.shinyapps.io/vacapp19/
+when: 1614270823.00841
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Dockerfile|heroku.yml

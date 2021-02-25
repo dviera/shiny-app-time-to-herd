@@ -1,10 +1,10 @@
 source("get_data.R")
 
+#Load your data
+
 server <- function(input, output, session) {
     
-    #Load your data
     df <- get_data()
-    
     
     #Update the dose input
     updateSelectInput(session, "dose", choices = sort(unique(df$Dosis)), selected = "Primera")
