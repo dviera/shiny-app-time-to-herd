@@ -35,9 +35,9 @@ ui <- fluidPage(
                               selectInput("dose", "Dose", choices = ""),
                               selectInput("regSelection", "Region", multiple = T, choices = "v1"),
 
-                              div(style="display:inline-block; margin-right: -120px;", radioButtons(inputId = "newDailyVac", label = "Vaccination", choices = "")),
+                              div(style = "margin-bottom: 0px;", radioButtons(inputId = "newDailyVac", label = "Vaccination", choices = "")),
                               div(style="display:inline-block;", tags$span(id = "sp1_ma", "Rolling")),
-                              div(style="display:inline-block; margin-top:0px;", numericInput(inputId = "numRol", width = 70, value = 7, label = "", min = 1)),
+                              div(style="display:inline-block; margin-top:-100px;", numericInput(inputId = "numRol", width = 105, value = 7, label = "", min = 1)),
                               div(style="display:inline-block;", tags$span(id = "sp2_ma","days")),
 
                               checkboxInput("normData", "Normalize by population", value = FALSE, width = NULL),
