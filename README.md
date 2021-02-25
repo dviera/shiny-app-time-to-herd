@@ -6,3 +6,5 @@
 - Formula:
 
     git Time to Herd = ( Population * 0.7  - First Dose Administered * 0.5) / (7-day moving average of daily doses administered * 0.5) 
+
+- Access the app here [https://notaico.shinyapps.io/vacapp19/](https://notaico.shinyapps.io/vacapp19/)
