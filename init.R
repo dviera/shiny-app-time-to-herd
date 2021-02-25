@@ -6,7 +6,7 @@
 ###########################################################
 # Update this line with the R packages to install:
 
-my_packages = c("tidyverse", "ggplot2", "bslib", "shiny", "shinyjs", "lubridate", "thematic", "plotly")
+my_packages = c("zoo", "tidyverse", "ggplot2", "bslib", "shiny", "shinyjs", "lubridate", "thematic", "plotly", "scales")
 
 ###########################################################
 

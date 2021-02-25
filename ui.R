@@ -3,7 +3,6 @@ library(ggplot2)
 library(tidyverse)
 library(shinyjs)
 library(bslib)
-library(thematic)
 library(plotly)
 
 
@@ -11,7 +10,7 @@ theme_set(theme_minimal())
 
 ui <- fluidPage(
     
-    theme = bs_theme(bg = "#444444", fg = "#E4E4E4", primary = "#E39777",
+    theme = bslib::bs_theme(bg = "#444444", fg = "#E4E4E4", primary = "#E39777",
                      base_font = list(font_google("Prompt", local = FALSE), "Roboto", "sans-serif"),
                      "font-size-base" = "0.75rem"),
     
