@@ -59,14 +59,27 @@ server <- function(input, output, session) {
     
     # Calculate time to herd
     timeToHerd <- function(data, reg){
-        data %>% group_by(Region, Dosis) %>% 
-            arrange(Fecha) %>% 
-            mutate(daily = c(Cantidad[1], diff(Cantidad))) %>% 
+        # data %>% group_by(Region, Dosis) %>% 
+        #     arrange(Fecha) %>% 
+        #     mutate(daily = c(Cantidad[1], diff(Cantidad))) %>% 
+        #     mutate(roll_mean = zoo::rollmean(daily, k = 7, fill = NA, align = "right")) %>% 
+        #     mutate(herd = (Poblacion * 0.7 - Cantidad * 0.5) / (roll_mean * 0.5) ) %>% 
+        #     filter(Region == reg, Dosis == "Primera") %>% 
+        #     last() %>% 
+        #     tail(1)
+        
+        data %>% 
+            select(Region, Dosis, Fecha, Cantidad, Poblacion) %>% 
+            spread(key = Dosis, value = Cantidad) %>% 
+            group_by(Region) %>% arrange(Fecha) %>% 
+            mutate(Total = Primera + Segunda) %>% 
+            mutate(daily = c(Total[1], diff(Total))) %>%
             mutate(roll_mean = zoo::rollmean(daily, k = 7, fill = NA, align = "right")) %>% 
-            mutate(herd = (Poblacion * 0.7 - Cantidad * 0.5) / (roll_mean * 0.5) ) %>% 
-            filter(Region == reg, Dosis == "Primera") %>% 
-            last() %>% 
+            mutate(herd = (Poblacion * 0.7 - Total * 0.5) / (roll_mean * 0.5) ) %>%
+            filter(Region == reg) %>%
+            last() %>%
             tail(1)
+            
     }
 
     
